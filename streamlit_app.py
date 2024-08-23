@@ -5,6 +5,11 @@ import streamlit as st
 # Importing Perplexity
 from langchain_community.chat_models import ChatPerplexity
 from langchain_core.prompts import ChatPromptTemplate
+from langchain.prompts import PromptTemplate
+from langchain.chains import ConversationChain
+from langchain.chains import     ConversationalRetrievalChain
+from langchain.prompts.chat import (ChatPromptTemplate,SystemMessagePromptTemplate,HumanMessagePromptTemplate,)
+from langchain.chains import LLMChain, ConversationChain
 
 st.set_page_config(page_title="Everlastly")
 
