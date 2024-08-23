@@ -36,5 +36,5 @@ def get_chatassistant_aitopics():
     return aitopics
 aitopics = get_chatassistant_aitopics()
 
-responsememories = memorychain.run(card)
+responsememories = aitopics.run(card)
 st.warning("Current Product:  \n"+responsememories)
