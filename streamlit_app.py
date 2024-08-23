@@ -13,5 +13,23 @@ st.set_page_config(page_title="Everlastly")
 PPLX_API_KEY= os.environ['PPLX_API_KEY']
 
 
-title = st.text_input("Product Search", "Everlastly")
-st.write("The current product title is", title)
+text_input = st.text_input("Enter Everlastly Product 👇", key="4")
+prompt = st.text_input("Enter Prompt 👇", key="5")
+
+card=prompt+text_input
+                        
+
+template = """You are a helpful assistant in giving a product description for {text}. 
+Provide a one sentence explanation """
+system_message_prompt = SystemMessagePromptTemplate.from_template(template)
+human_template = "{text}"
+human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
+chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
+def get_chatassistant_aitopics():
+    aitopics = LLMChain(
+        llm=ChatPerplexity(model="llama-3.1-sonar-huge-128k-online", temperature=.8),prompt=chat_prompt,verbose=True)
+    return aitopics
+aitopics = get_chatassistant_aitopics()
+
+responsememories = memorychain.run(card)
+st.warning("Current Product:  \n"+responsememories)
