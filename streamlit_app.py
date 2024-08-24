@@ -19,7 +19,7 @@ PPLX_API_KEY= os.environ['PPLX_API_KEY']
 
 
 text_input = st.text_input("Enter Everlastly Product 👇", key="4")
-prompt = st.text_input("Enter Prompt 👇", key="5")
+prompt = st.text_input("Enter Prompt 👇", key="5", value = "Follow the below steps: 1) Find the materials used in creating the product. 2) Then list the estimated % for each material.")
 
 card=prompt+text_input
                         
