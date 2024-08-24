@@ -19,13 +19,13 @@ PPLX_API_KEY= os.environ['PPLX_API_KEY']
 
 
 text_input = st.text_input("Enter Everlastly Product 👇", key="4")
-prompt = st.text_area("Enter Prompt 👇", key="5", value = "Follow the below steps:
-1) Find the materials used in creating the product. 
-2) Find the estimated % for each material. 
-3) Calculate the Co2 carbon footprint for each Material 
-4) Multiply the percentage of each material by its respective carbon footprint per kilogram and then sum these values to estimate the Total Co2 for the Product.
+prompt = st.text_area("Enter Prompt 👇", key="5", value = "Follow the below steps:"+
+"1) Find the materials used in creating the product."+
+"2) Find the estimated % for each material."+ 
+"3) Calculate the Co2 carbon footprint for each Material"+ 
+"4) Multiply the percentage of each material by its respective carbon footprint per kilogram and then sum these values to estimate the Total Co2 for the Product."+
 
-Format each step with a Title and the data in Bullet Points. Put the Total in BOLD font.")
+"Format each step with a Title and the data in Bullet Points. Put the Total in BOLD font.")
 
 card=prompt+text_input
                         
