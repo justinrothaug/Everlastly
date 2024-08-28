@@ -16,6 +16,7 @@ st.set_page_config(page_title="Everlastly")
 
 #Add Keys
 PPLX_API_KEY= os.environ['PPLX_API_KEY']
+PPLX_API_KEY2 = "Bearer "+PPLX_API_KEY
 
 text_input = st.text_input("Enter Everlastly Product 👇", key="4", value = "Lodge 12 Inch Cast Iron Skillet")
 prompt = st.text_area("Enter Prompt 👇", key="5", value = "Follow the below steps:"+
@@ -45,10 +46,11 @@ def StartConvo2():
   payload = {
       "model": "llama-3.1-sonar-huge-128k-online",
       "messages": [{"role": "system","content": "Be precise and concise."},{"role": "user","content": "How many stars are there in our galaxy?"}]}
-  headers = {"accept": "application/json", "content-type": "application/json""authorization": PPLX_API_KEY}
+  headers = {"accept": "application/json", "content-type": "application/json", authorization": PPLX_API_KEY2}
   response = requests.post(url, json=payload, headers=headers)
   responsetext=response.text
   st.warning("Current Product:  \n"+responsetext)
+
 
 def StartConvo():
   responsememories = aitopics.run(card)
