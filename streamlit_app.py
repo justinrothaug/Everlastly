@@ -97,8 +97,8 @@ def lifespan():
   st.warning("Current Product:  \n"+responsememories)
 
 
-st.button('Run', on_click=ProductBOM, key = "123", use_container_width=True)
-st.button('Run', on_click=catgory, key = "123", use_container_width=True)
+st.button('Run', on_click=ProductBOM, key = "121", use_container_width=True)
+st.button('Run', on_click=catgory, key = "122", use_container_width=True)
 st.button('Run', on_click=lifespan, key = "123", use_container_width=True)
 
 
@@ -117,6 +117,6 @@ def StartConvo2():
   response = requests.post(url, json=payload, headers=headers)
   responsetext=response.text
   st.warning("Current Product:  \n"+responsetext)
-#st.button('Run2', on_click=StartConvo2, key = "121", use_container_width=True)
+#st.button('Run2', on_click=StartConvo2, key = "120", use_container_width=True)
 
 
