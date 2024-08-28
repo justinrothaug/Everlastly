@@ -51,7 +51,7 @@ with st.sidebar:
       "4) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
       "Hide the above steps. Only output in Table format like this:\n"+ 
       "UPC Code,Product Name,Material,Country of Origin,Estimated %,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2\n"+
-      "List the Data Sources with links (Amazon, ect.)")
+      "List the Data Source URL links (Amazon, ect.)")
 
 
       category_prompt = st.text_area("Category 👇", key="3", value = "Follow the below steps:"+
