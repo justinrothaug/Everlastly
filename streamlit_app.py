@@ -26,7 +26,7 @@ prompt = st.text_area("Enter Prompt 👇", key="5", value = "Follow the below st
 "5) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
 "Format each step with a Header and the data. Output in CSV format like this: UPC Code,Product Name,Material,Country of Origin,Estimated %,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2")
 
-card="For the following product:"text_input+prompt
+card="For the following product:"+text_input+prompt
                         
 template = """You are a helpful assistant in giving a product description for {text}. 
 Provide a one sentence explanation """
