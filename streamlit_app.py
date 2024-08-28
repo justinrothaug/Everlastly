@@ -26,7 +26,7 @@ prompt = st.text_area("Enter Prompt 👇", key="5", value = "Follow the below st
 "5) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
 "Format each step with a Header and the data. Output in CSV format like this: UPC Code,Product Name,Material,Country of Origin,Estimated %,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2")
 
-card=prompt+text_input
+card="For the following product:"text_input+prompt
                         
 template = """You are a helpful assistant in giving a product description for {text}. 
 Provide a one sentence explanation """
@@ -45,7 +45,7 @@ def StartConvo2():
   url = "https://api.perplexity.ai/chat/completions"
   payload = {
       "model": "llama-3.1-sonar-huge-128k-online",
-      "messages": [{"role": "system","content": "Be precise and concise."},{"role": "user","content": "How many stars are there in our galaxy?"}]}
+      "messages": [{"role": "system","content": "Be as accurate as possible"},{"role": "user","content": card}]}
   headers = {"accept": "application/json", "content-type": "application/json", "authorization": PPLX_API_KEY2}
   response = requests.post(url, json=payload, headers=headers)
   responsetext=response.text
