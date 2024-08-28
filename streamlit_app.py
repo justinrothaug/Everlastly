@@ -45,7 +45,7 @@ def StartConvo2():
   payload = {
       "model": "llama-3.1-sonar-huge-128k-online",
       "messages": [{"role": "system","content": "Be precise and concise."},{"role": "user","content": "How many stars are there in our galaxy?"}]}
-  headers = {"accept": "application/json", "content-type": "application/json""authorization": "Bearer"+PPLX_API_KEY}
+  headers = {"accept": "application/json", "content-type": "application/json""authorization": PPLX_API_KEY}
   response = requests.post(url, json=payload, headers=headers)
   responsetext=response.text
   st.warning("Current Product:  \n"+responsetext)
