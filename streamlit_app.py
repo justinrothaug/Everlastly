@@ -38,7 +38,7 @@ human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
 chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
 def get_chatassistant_aitopics():
     aitopics = LLMChain(
-        llm=ChatPerplexity(model="llama-3.1-sonar-huge-128k-online", temperature=.8),prompt=chat_prompt,verbose=True, max_tokens=4000)
+        llm=ChatPerplexity(model="llama-3.1-sonar-huge-128k-online", temperature=0,max_tokens=4000),prompt=chat_prompt,verbose=True)
     return aitopics
 aitopics = get_chatassistant_aitopics()
 
