@@ -60,7 +60,7 @@ def ProductBOM():
   st.warning("Current Product:  \n"+responsememories)
 
 
-def category():
+#def category():
   template = """You are a helpful assistant in following instructions for {text}. 
   Provide a one sentence explanation """
   system_message_prompt = SystemMessagePromptTemplate.from_template(template)
@@ -75,7 +75,7 @@ def category():
   responsememories = aitopics.run(categorycard)
   st.warning("Current Product:  \n"+responsememories)
 
-def lifespan():
+#def lifespan():
   template = """You are a helpful assistant in following instructions for {text}. 
   Provide a one sentence explanation """
   system_message_prompt = SystemMessagePromptTemplate.from_template(template)
@@ -91,9 +91,9 @@ def lifespan():
   st.warning("Current Product:  \n"+responsememories)
 
 
-st.button('Run ProductBOM', on_click=ProductBOM, key = "121", use_container_width=True)
-st.button('Run category', on_click=category, key = "122", use_container_width=True)
-st.button('Run lifespan', on_click=lifespan, key = "123", use_container_width=True)
+st.button('Run', on_click=ProductBOM, key = "121", use_container_width=True)
+#st.button('Run category', on_click=category, key = "122", use_container_width=True)
+#st.button('Run lifespan', on_click=lifespan, key = "123", use_container_width=True)
 
 
 
