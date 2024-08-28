@@ -98,7 +98,7 @@ def lifespan():
 
 
 st.button('Run', on_click=ProductBOM, key = "121", use_container_width=True)
-st.button('Run', on_click=catgory, key = "122", use_container_width=True)
+st.button('Run', on_click=category, key = "122", use_container_width=True)
 st.button('Run', on_click=lifespan, key = "123", use_container_width=True)
 
 
