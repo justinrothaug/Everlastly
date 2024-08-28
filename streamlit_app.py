@@ -11,8 +11,7 @@ from langchain.chains import     ConversationalRetrievalChain
 from langchain.prompts.chat import (ChatPromptTemplate,SystemMessagePromptTemplate,HumanMessagePromptTemplate,)
 from langchain.chains import LLMChain, ConversationChain
 
-st.set_page_config(page_title="Everlastly")
-
+st.set_page_config(page_title="Evergrade.AI", layout="wide")
 
 #Add Keys
 PPLX_API_KEY= os.environ['PPLX_API_KEY']
