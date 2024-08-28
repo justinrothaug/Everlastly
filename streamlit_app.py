@@ -31,8 +31,7 @@ prompt = st.text_area("Enter Prompt 👇", key="5", value = "Follow the below st
 card=prompt+text_input
                         
 
-template = """You are a helpful assistant in giving a product description for {text}. 
-Provide a one sentence explanation """
+template = """You are a helpful assistant in returning the Co2 for a product. Follow the directions provided:"""
 system_message_prompt = SystemMessagePromptTemplate.from_template(template)
 human_template = "{text}"
 human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
