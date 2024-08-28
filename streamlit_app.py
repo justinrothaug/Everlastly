@@ -70,6 +70,10 @@ lifespancard="For the following: "+lifespan_prompt
       
 
 def ProductBOM():
+
+  header.title(text_input)
+
+    
   template = """You are a helpful assistant in following instructions for {text}. 
   Provide a one sentence explanation """
   system_message_prompt = SystemMessagePromptTemplate.from_template(template)
