@@ -30,24 +30,18 @@ product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the
 
 
 category_prompt = st.text_area("Category 👇", key="3", value = "Follow the below steps:"+
-"2) Find the materials used in creating the product\n"+
-"3) Find the estimated % and weight in pounds for each material.\n"+ 
-"4) Calculate the Co2 carbon footprint for each Material.\n"+ 
-"5) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
-"Format each step with a Header and the data. Output in CSV format like this: UPC Code,Product Name,Material,Country of Origin,Estimated %,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2")
+"Create a excel style table of product categories based on the Amazon listing,  using the following formatting as a guide: \n"+
+"Department, Category, Subcategory, Specific Category. \n"+ 
+"Add a final column that shows the type of product within the specific category by analyzing the different product types available.")
 
-lifespan_prompt = st.text_area("Lifespan 👇", key="2", value = "Follow the below steps:"+
-"2) Find the materials used in creating the product\n"+
-"3) Find the estimated % and weight in pounds for each material.\n"+ 
-"4) Calculate the Co2 carbon footprint for each Material.\n"+ 
-"5) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
-"Format each step with a Header and the data. Output in CSV format like this: UPC Code,Product Name,Material,Country of Origin,Estimated %,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2")
+lifespan_prompt = st.text_area("Lifespan 👇", key="2", value = "Follow the below steps:\n"+
+"List the general types of skillets and frypans, then estimate their lifespan in one number of years where lifetime is equal to 100 years, and display results in an table format including a column that displays the specific product category.")
 
 
 
 productcard="For the following product:"+text_input+product_prompt
 categorycard="For the following product:"+text_input+category_prompt
-lifespancard="For the following product:"+text_input+lifespan_prompt
+lifespancard="For the following: "+lifespan_prompt
       
 
 def ProductBOM():
@@ -97,9 +91,9 @@ def lifespan():
   st.warning("Current Product:  \n"+responsememories)
 
 
-st.button('Run', on_click=ProductBOM, key = "121", use_container_width=True)
-st.button('Run', on_click=category, key = "122", use_container_width=True)
-st.button('Run', on_click=lifespan, key = "123", use_container_width=True)
+st.button('Run ProductBOM', on_click=ProductBOM, key = "121", use_container_width=True)
+st.button('Run category', on_click=category, key = "122", use_container_width=True)
+st.button('Run lifespan', on_click=lifespan, key = "123", use_container_width=True)
 
 
 
