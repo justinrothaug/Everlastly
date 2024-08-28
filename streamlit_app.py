@@ -86,7 +86,7 @@ def ProductBOM():
       return aitopics
   aitopics = get_chatassistant_aitopics()
   responsememories = aitopics.run(productcard)
-  st.warning("Current Product:  \n"+responsememories)
+  st.warning("Product BOM:  \n"+responsememories)
 
 
 #def category():
@@ -102,7 +102,7 @@ def ProductBOM():
       return aitopics
   aitopics = get_chatassistant_aitopics()
   responsememories = aitopics.run(categorycard)
-  st.warning("Current Product:  \n"+responsememories)
+  st.warning("Product Category:  \n"+responsememories)
 
 #def lifespan():
   template = """You are a helpful assistant in following instructions for {text}. 
@@ -117,7 +117,7 @@ def ProductBOM():
       return aitopics
   aitopics = get_chatassistant_aitopics()
   responsememories = aitopics.run(lifespancard)
-  st.warning("Current Product:  \n"+responsememories)
+  st.warning("Product Lifespan:  \n"+responsememories)
 
 
 
