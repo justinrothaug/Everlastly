@@ -135,7 +135,7 @@ def ProductBOM():
 
 
 with st.sidebar: 
-    st.button('Run', on_click=ProductBOM, key = "121", use_container_width=True)
+    st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
 
 
 
