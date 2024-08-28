@@ -44,7 +44,7 @@ def StartConvo2():
   import requests
   url = "https://api.perplexity.ai/chat/completions"
   payload = {
-      "model": "llama-3.1-sonar-huge-128k-online",
+      "model": "llama-3.1-sonar-small-128k-online",
       "messages": [{"role": "system","content": "Be as accurate as possible"},{"role": "user","content": card}]}
   headers = {"accept": "application/json", "content-type": "application/json", "authorization": PPLX_API_KEY2}
   response = requests.post(url, json=payload, headers=headers)
