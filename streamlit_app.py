@@ -18,14 +18,15 @@ st.set_page_config(page_title="Everlastly")
 PPLX_API_KEY= os.environ['PPLX_API_KEY']
 
 
-text_input = st.text_input("Enter Everlastly Product 👇", key="4")
+text_input = st.text_input("Enter Everlastly Product 👇", key="4", value = "Lodge 12 Inch Cast Iron Skillet")
 prompt = st.text_area("Enter Prompt 👇", key="5", value = "Follow the below steps:"+
-"1) Find the materials used in creating the product."+
-"2) Find the estimated % and weight in kg for each material"+ 
-"3) Calculate the Co2 carbon footprint for each Material"+ 
-"4) Multiply the percentage of each material by its respective carbon footprint per kilogram and then sum these values to estimate the Total Co2 for the Product."+
+"1) Find the UPC Code for the Product.\n"+"
+"2) Find the materials used in creating the product and their Country of Origin.\n"+
+"3) Find the estimated % and weight in pounds for each material.\n"+ 
+"4) Calculate the Co2 carbon footprint for each Material.\n"+ 
+"5) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
 
-"Format each step with a Title and the data in Bullet Points. Put the Total in BOLD font.")
+"Format each step with a Header and the data. Output in CSV format like this: UPC Code,Product Name,Material,Country of Origin,Estimated %,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2")
 
 card=prompt+text_input
                         
