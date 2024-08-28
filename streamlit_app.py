@@ -45,7 +45,7 @@ st.markdown(
 with st.sidebar: 
       text_input = st.text_input("Enter Everlastly Product 👇", key="4", value = "Lodge 12 Inch Cast Iron Skillet")
 
-      product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the below steps:"+
+      product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the below steps:\n"+
       "1) Find the materials used in creating the product.\n"+
       "2) Find the estimated % and weight in pounds for each material.\n"+ 
       "3) Calculate the Co2 carbon footprint for each Material.\n"+ 
