@@ -18,24 +18,49 @@ st.set_page_config(page_title="Everlastly")
 PPLX_API_KEY= os.environ['PPLX_API_KEY']
 PPLX_API_KEY2 = "Bearer "+PPLX_API_KEY
 
-text_input = st.text_input("Enter Everlastly Product 👇", key="4", value = "Lodge 12 Inch Cast Iron Skillet")
+header = st.container()
+header.title("Evergrade.AI")
+
+#################################################################################################################################################
+### Custom CSS for the sticky header#########
+header.write("""<div class='fixed-header'/>""", unsafe_allow_html=True)
+st.markdown(
+    """
+<style>
+    div[data-testid="stVerticalBlock"] div:has(div.fixed-header) {
+        position: sticky;
+        top: 2.875rem;
+        background-color: white;
+        z-index: 999;
+    }
+    .fixed-header {
+        border-bottom: 1px solid black;
+    }
+</style>
+    """,
+    unsafe_allow_html=True
+)
 
 
-product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the below steps:"+
-"2) Find the materials used in creating the product\n"+
-"3) Find the estimated % and weight in pounds for each material.\n"+ 
-"4) Calculate the Co2 carbon footprint for each Material.\n"+ 
-"5) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
-"Format each step with a Header and the data. Output in CSV format like this: UPC Code,Product Name,Material,Country of Origin,Estimated %,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2")
+with st.sidebar: 
+      text_input = st.text_input("Enter Everlastly Product 👇", key="4", value = "Lodge 12 Inch Cast Iron Skillet")
 
 
-category_prompt = st.text_area("Category 👇", key="3", value = "Follow the below steps:"+
-"Create a excel style table of product categories based on the Amazon listing,  using the following formatting as a guide: \n"+
-"Department, Category, Subcategory, Specific Category. \n"+ 
-"Add a final column that shows the type of product within the specific category by analyzing the different product types available.")
+      product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the below steps:"+
+      "2) Find the materials used in creating the product\n"+
+      "3) Find the estimated % and weight in pounds for each material.\n"+ 
+      "4) Calculate the Co2 carbon footprint for each Material.\n"+ 
+      "5) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
+      "Format each step with a Header and the data. Output in CSV format like this: UPC Code,Product Name,Material,Country of Origin,Estimated %,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2")
 
-lifespan_prompt = st.text_area("Lifespan 👇", key="2", value = "Follow the below steps:\n"+
-"List the general types of skillets and frypans, then estimate their lifespan in one number of years where lifetime is equal to 100 years, and display results in an table format including a column that displays the specific product category.")
+
+      category_prompt = st.text_area("Category 👇", key="3", value = "Follow the below steps:"+
+      "Create a excel style table of product categories based on the Amazon listing,  using the following formatting as a guide: \n"+
+      "Department, Category, Subcategory, Specific Category. \n"+ 
+      "Add a final column that shows the type of product within the specific category by analyzing the different product types available.")
+      
+      lifespan_prompt = st.text_area("Lifespan 👇", key="2", value = "Follow the below steps:\n"+
+      "List the general types of skillets and frypans, then estimate their lifespan in one number of years where lifetime is equal to 100 years, and display results in an table format including a column that displays the specific product category.")
 
 
 
