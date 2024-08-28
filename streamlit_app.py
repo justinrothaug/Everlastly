@@ -29,14 +29,14 @@ product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the
 "Format each step with a Header and the data. Output in CSV format like this: UPC Code,Product Name,Material,Country of Origin,Estimated %,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2")
 
 
-category_prompt = st.text_area("Category 👇", key="5", value = "Follow the below steps:"+
+category_prompt = st.text_area("Category 👇", key="3", value = "Follow the below steps:"+
 "2) Find the materials used in creating the product\n"+
 "3) Find the estimated % and weight in pounds for each material.\n"+ 
 "4) Calculate the Co2 carbon footprint for each Material.\n"+ 
 "5) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
 "Format each step with a Header and the data. Output in CSV format like this: UPC Code,Product Name,Material,Country of Origin,Estimated %,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2")
 
-lifespan_prompt = st.text_area("Lifespan 👇", key="5", value = "Follow the below steps:"+
+lifespan_prompt = st.text_area("Lifespan 👇", key="2", value = "Follow the below steps:"+
 "2) Find the materials used in creating the product\n"+
 "3) Find the estimated % and weight in pounds for each material.\n"+ 
 "4) Calculate the Co2 carbon footprint for each Material.\n"+ 
