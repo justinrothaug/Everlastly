@@ -20,7 +20,7 @@ PPLX_API_KEY= os.environ['PPLX_API_KEY']
 text_input = st.text_input("Enter Everlastly Product 👇", key="4", value = "Lodge 12 Inch Cast Iron Skillet")
 prompt = st.text_area("Enter Prompt 👇", key="5", value = "Follow the below steps:"+
 "1) Find the UPC Code for the Product.\n"
-"2) Find the materials used in creating the product and their Country of Origin.\n"+
+"2) Find the materials used in creating the product\n"+
 "3) Find the estimated % and weight in pounds for each material.\n"+ 
 "4) Calculate the Co2 carbon footprint for each Material.\n"+ 
 "5) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
