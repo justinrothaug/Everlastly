@@ -59,6 +59,6 @@ def StartConvo():
 
 
 st.button('Run', on_click=StartConvo, key = "123", use_container_width=True)
-st.button('Run2', on_click=StartConvo2, key = "123", use_container_width=True)
+st.button('Run2', on_click=StartConvo2, key = "121", use_container_width=True)
 
 
