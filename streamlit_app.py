@@ -61,8 +61,9 @@ with st.sidebar:
       "Hide the explanation")
       
       lifespan_prompt = st.text_area("Lifespan 👇", key="2", value = "Follow the below steps:\n"+
-      "List the general types of skillets and frypans, then estimate their lifespan in one number of years where lifetime is equal to 100 years, and display results in an table format including a column that displays the specific product category.")
-
+      "List the general types of skillets and frypans, then estimate their lifespan in one number of years where lifetime is equal to 100 years, and display results in an table format including a column that displays the specific product category.\n"+
+      "Hide the steps and explanation")
+    
 
 
 productcard="For the following product:"+text_input+product_prompt
