@@ -54,10 +54,11 @@ with st.sidebar:
       "List the Data Source URL links (Amazon, ect.)")
 
 
-      category_prompt = st.text_area("Category 👇", key="3", value = "Follow the below steps:"+
-      "Create a excel style table of product categories based on the Amazon listing,  using the following formatting as a guide: \n"+
+      category_prompt = st.text_area("Category 👇", key="3", value = "Follow the below steps:\n"+
+      "Create an Excel style table of product categories based on the Amazon listing,  using the following formatting as a guide: \n"+
       "Department, Category, Subcategory, Specific Category. \n"+ 
-      "Add a final column that shows the type of product within the specific category by analyzing the different product types available.")
+      "Add a final column that shows the type of product within the specific category by analyzing the different product types available.\n"+
+      "Hide the explanation")
       
       lifespan_prompt = st.text_area("Lifespan 👇", key="2", value = "Follow the below steps:\n"+
       "List the general types of skillets and frypans, then estimate their lifespan in one number of years where lifetime is equal to 100 years, and display results in an table format including a column that displays the specific product category.")
