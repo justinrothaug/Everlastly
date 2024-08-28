@@ -40,5 +40,12 @@ def get_chatassistant_aitopics():
     return aitopics
 aitopics = get_chatassistant_aitopics()
 
-responsememories = aitopics.run(card)
-st.warning("Current Product:  \n"+responsememories)
+
+def StartConvo():
+  responsememories = aitopics.run(card)
+  st.warning("Current Product:  \n"+responsememories)
+
+
+
+st.button('Run', on_click=StartConvo, key = "123", use_container_width=True)
+
