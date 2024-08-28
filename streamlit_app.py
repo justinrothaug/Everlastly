@@ -39,6 +39,21 @@ def get_chatassistant_aitopics():
     return aitopics
 aitopics = get_chatassistant_aitopics()
 
+headers = {
+    "accept": "application/json",
+    "content-type": "application/json",
+    "authorization": "Bearer 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"
+}
+import requests
+url = "https://api.perplexity.ai/chat/completions"
+payload = {
+    "model": "llama-3.1-sonar-huge-128k-online",
+    "messages": [{"role": "system","content": "Be precise and concise."},{"role": "user","content": "How many stars are there in our galaxy?"}]}
+headers = {"accept": "application/json", "content-type": "application/json""authorization": "Bearer"+PPLX_API_KEY}
+
+response = requests.post(url, json=payload, headers=headers)
+responsetext=response.text)
+st.warning("Current Product:  \n"+responsetext)
 
 def StartConvo():
   responsememories = aitopics.run(card)
