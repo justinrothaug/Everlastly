@@ -36,16 +36,14 @@ human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
 chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
 def get_chatassistant_aitopics():
     aitopics = LLMChain(
-        llm=ChatPerplexity(model="llama-3.1-sonar-huge-128k-online", temperature=.8),prompt=chat_prompt,verbose=True)
+        llm=ChatPerplexity(model="llama-3.1-sonar-small-128k-online", temperature=.8),prompt=chat_prompt,verbose=True)
     return aitopics
 aitopics = get_chatassistant_aitopics()
 
 def StartConvo2():
   import requests
   url = "https://api.perplexity.ai/chat/completions"
-  payload = {
-      "model": "llama-3.1-sonar-small-128k-online",
-      "messages": [{"role": "system","content": "Be as accurate as possible"},{"role": "user","content": card}]}
+  payload = {"model": "llama-3.1-sonar-small-128k-online","messages": [{"role": "system","content": "Be as accurate as possible"},{"role": "user","content": card}]}
   headers = {"accept": "application/json", "content-type": "application/json", "authorization": PPLX_API_KEY2}
   response = requests.post(url, json=payload, headers=headers)
   responsetext=response.text
@@ -59,6 +57,6 @@ def StartConvo():
 
 
 st.button('Run', on_click=StartConvo, key = "123", use_container_width=True)
-st.button('Run2', on_click=StartConvo2, key = "121", use_container_width=True)
+#st.button('Run2', on_click=StartConvo2, key = "121", use_container_width=True)
 
 
