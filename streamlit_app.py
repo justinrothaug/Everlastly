@@ -125,11 +125,6 @@ def ProductBOM():
 
 with st.sidebar: 
     st.button('Run', on_click=ProductBOM, key = "121", use_container_width=True)
-    #st.button('Run category', on_click=category, key = "122", use_container_width=True)
-    #st.button('Run lifespan', on_click=lifespan, key = "123", use_container_width=True)
-
-
-
 
 
 
