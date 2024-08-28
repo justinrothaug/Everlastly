@@ -72,14 +72,14 @@ with st.sidebar:
       "Hide the explanation")
       
       lifespan_prompt = st.text_area("Lifespan 👇", key="2", value = "Follow the below steps:\n"+
-      "List the general types of skillets and frypans, then estimate their lifespan in one number of years where lifetime is equal to 100 years, and display results in an table format including a column that displays the specific product category.\n"+
+      "For the general types of this Product's Category, estimate their lifespan in one number of years where lifetime is equal to 100 years, and display results in an table format including a column that displays the specific product category.\n"+
       "Hide the steps and explanation")
     
 
 
 productcard="For the following product:"+text_input+product_prompt
 categorycard="For the following product:"+text_input+category_prompt
-lifespancard="For the following: "+lifespan_prompt
+lifespancard="For the following: "+text_input+lifespan_prompt
       
 
 def ProductBOM():
@@ -95,7 +95,7 @@ def ProductBOM():
   chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
   def get_chatassistant_aitopics():
       aitopics = LLMChain(
-          llm=ChatPerplexity(model="llama-3.1-sonar-small-128k-online", temperature=.8),prompt=chat_prompt,verbose=True)
+          llm=ChatPerplexity(model="llama-3.1-sonar-small-128k-online", temperature=0),prompt=chat_prompt,verbose=True)
       return aitopics
   aitopics = get_chatassistant_aitopics()
   responsememories = aitopics.run(productcard)
@@ -111,7 +111,7 @@ def ProductBOM():
   chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
   def get_chatassistant_aitopics():
       aitopics = LLMChain(
-          llm=ChatPerplexity(model="llama-3.1-sonar-small-128k-online", temperature=.8),prompt=chat_prompt,verbose=True)
+          llm=ChatPerplexity(model="llama-3.1-sonar-small-128k-online", temperature=0),prompt=chat_prompt,verbose=True)
       return aitopics
   aitopics = get_chatassistant_aitopics()
   responsememories = aitopics.run(categorycard)
@@ -126,7 +126,7 @@ def ProductBOM():
   chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
   def get_chatassistant_aitopics():
       aitopics = LLMChain(
-          llm=ChatPerplexity(model="llama-3.1-sonar-small-128k-online", temperature=.8),prompt=chat_prompt,verbose=True)
+          llm=ChatPerplexity(model="llama-3.1-sonar-small-128k-online", temperature=0),prompt=chat_prompt,verbose=True)
       return aitopics
   aitopics = get_chatassistant_aitopics()
   responsememories = aitopics.run(lifespancard)
