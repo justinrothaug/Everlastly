@@ -47,7 +47,7 @@ def StartConvo2():
       "messages": [{"role": "system","content": "Be precise and concise."},{"role": "user","content": "How many stars are there in our galaxy?"}]}
   headers = {"accept": "application/json", "content-type": "application/json""authorization": "Bearer"+PPLX_API_KEY}
   response = requests.post(url, json=payload, headers=headers)
-  responsetext=response.text)
+  responsetext=response.text
   st.warning("Current Product:  \n"+responsetext)
 
 def StartConvo():
