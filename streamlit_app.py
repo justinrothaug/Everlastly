@@ -40,7 +40,7 @@ def get_chatassistant_aitopics():
     aitopics = LLMChain(
         llm=ChatPerplexity(model="llama-3.1-sonar-huge-128k-online", temperature=0,max_tokens=4000),prompt=chat_prompt,verbose=True)
     return aitopics
-aitopics = get_chatassistant_aitopics(text_input)
+aitopics = get_chatassistant_aitopics()
 
-responsememories = aitopics.run()
+responsememories = aitopics.run(text_input)
 st.warning("Current Product:  \n"+responsememories)
