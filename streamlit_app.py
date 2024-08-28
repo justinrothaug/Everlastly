@@ -20,7 +20,7 @@ PPLX_API_KEY2 = "Bearer "+PPLX_API_KEY
 header = st.container()
 header.title("Evergrade.AI")
 with st.sidebar: 
-   header.title("Evergrade.AI")  
+   st.title("Evergrade.AI")  
 #################################################################################################################################################
 ### Custom CSS for the sticky header#########
 header.write("""<div class='fixed-header'/>""", unsafe_allow_html=True)
