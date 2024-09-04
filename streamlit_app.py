@@ -57,7 +57,7 @@ with st.sidebar:
 
       product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the below steps:\n"+
       "1) Find the materials used in creating the product.\n"+
-      "2) Find the estimated % and weight in pounds for each material.\n"+ 
+      "2) Find the estimated % of the total volume and weight in pounds for each material. The % should take into account specific % by volume and weight in pounds for each material.\n"+ 
       "3) Calculate the Co2 carbon footprint for each Material (Co2 per Pound).\n"+ 
       "4) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
       "Hide the above steps. Only output in Table format like this:\n"+ 
