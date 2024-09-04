@@ -60,7 +60,7 @@ with st.sidebar:
       "2) Find the estimated % of the total volume and weight in pounds for each material. The estimation should contain a specific % by volume and weight in pounds for each material using material density. For example, for each material this product has 43% material volume and 22% material weight\.\n"+                                     
       "3) Calculate the Co2 carbon footprint for each Material (Co2 per Pound).\n"+ 
       "4) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
-      "Hide the above steps. Only output in Table format like this:\n"+ 
+      "Only output in Table format like this:\n"+ 
       "UPC Code,Product Name,Material,Country of Origin,Estimated % in Volume,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2\n"+
       "List the Data Source URL links (Amazon, ect.)")
 
