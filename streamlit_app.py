@@ -56,7 +56,7 @@ with st.sidebar:
       text_input = st.text_input("Enter Everlastly Product 👇", key="4", value = "Lodge 12 Inch Cast Iron Skillet")
 
       product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the below steps:\n"+
-      "1) Find the materials used in creating the product.\n"+
+      "Prioritize sources like Amazon and the Company website 1) Find the materials used in creating the product.\n"+
       "2) Find the estimated % of the total volume and weight in pounds for each material. The estimation should contain a specific % by volume and weight in pounds for each material using material density. For example, for each material this product has 43% material volume and 22% material weight\.\n"+                                     
       "3) Calculate the Co2 carbon footprint for each Material (Co2 per Pound).\n"+ 
       "4) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
