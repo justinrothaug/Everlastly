@@ -57,14 +57,16 @@ with st.sidebar:
 
       product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the below steps:\n"+
       "*Prioritize sources like Amazon and the Company website*\n"+
-      "1) Find every material used in creating the product. Do not skip any materials.\n"+
-      "2) For each material, find both the source country and manufacturing country.\n"+
-      "3) Find the *estimated % of the total volume and weight in pounds for each material.\n"+
-      "*The estimation should contain a specific % by volume and weight in pounds for each material using material density. For example, for each material this product has 43% material volume and 22% material weight. \n"+                                     
-      "4) Calculate the Co2 carbon footprint for each Material (Co2 per Pound).\n"+ 
-      "5) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
+      "1) Identify the Total Weight of the product.\n"+
+      "2) Find every material used in creating the product. Do not skip any materials.Materials combined must equal 100%.\n"+
+      "3) For each material, find both the source country and manufacturing country.\n"+
+      "4) Find the *estimated % of the total volume for each material. \n"+
+      "5) Find the density for each material. List the source for this data\n"+
+      "6) Calculate the weight of each material using the volume and density.  This should equal the total weight of the product found in step 1\n"+                                     
+      "7) Calculate the Co2 carbon footprint for each Material (Co2 per Pound).\n"+ 
+      "8) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
       "Only output in Table format like this:\n"+ 
-      "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2\n"+
+      "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Estimated % in Weight,Material Density,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2\n"+
       "List the Data Source URL links (Amazon, ect.)")
 
       category_prompt = st.text_area("Category 👇", key="3", value = "Follow the below steps:\n"+
