@@ -61,7 +61,7 @@ with st.sidebar:
       "2) Find every material used in creating the product. Do not skip any materials.Materials combined must equal 100%.\n"+
       "3) For each material, find both the source country and manufacturing country.\n"+
       "4) Find the *estimated % of the total volume for each material. \n"+
-      "5) Find the density for each material. List the source for this data\n"+
+      "5) Find the density for each material in lb/ft^3. List the source for this data\n"+
       "6) Calculate the weight of each material using the volume and density.  This should equal the total weight of the product found in step 1\n"+                                     
       "7) Calculate the Co2 carbon footprint for each Material (Co2 per Pound).\n"+ 
       "8) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
