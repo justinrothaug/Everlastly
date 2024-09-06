@@ -53,7 +53,7 @@ st.markdown(
 )
 
 with st.sidebar: 
-      text_input = st.text_input("Enter Everlastly Product 👇", key="4", value = "Lodge 12 Inch Cast Iron Skillet")
+      text_input = st.text_input("Enter Everlastly Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
 
       product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the below steps:\n"+
       "*Prioritize sources like Amazon and the Company website*\n"+
