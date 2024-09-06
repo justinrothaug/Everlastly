@@ -57,7 +57,7 @@ with st.sidebar:
 
       product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the below steps:\n"+
       "*Prioritize sources like Amazon and the Company website*\n"+
-      "1) Find all materials used in creating the product.\n"+
+      "1) Find every material used in creating the product. Do not skip any materials.\n"+
       "2) For each material, find both the source country and manufacturing country.\n"+
       "3) Find the *estimated % of the total volume and weight in pounds for each material.\n"+
       "*The estimation should contain a specific % by volume and weight in pounds for each material using material density. For example, for each material this product has 43% material volume and 22% material weight. \n"+                                     
