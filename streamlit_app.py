@@ -66,12 +66,12 @@ with st.sidebar:
       "6a) find the Volume-Density by multiplying each material’s volume percentage by that material’s density\n"+
       "6b) Calculate the Density-Ratio by dividing that material’s Volume-Density by the total for all Volume-Densities of all materials found in the product\n"+
       "6c) Multiply the Density Ratio by the total weight of the product. This should equal the total weight of the product found in Step 1.\n"+                         
-      "7) Calculate the Co2 carbon footprint for each Material (Co2 per Pound).\n"+ 
-      "8) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
+      "7) Find the Published Carbon Footprint for each Material, expressed as Co2 per Pound\n"+
+      "8) Multiply the Part Weight of each material by its respective Published Carbon Footprint per pound to get the Carbon Footprint for that Material Part. Then sum these values to estimate the Total Co2 for the Product.\n"+
       "Only output in Table format like this:\n"+ 
-      "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Material Density, Volume Density, Density Ratio,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2\n"+
+      "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Material Density, Volume Density, Density Ratio,Weight in Pounds,Published CO2 Carbon Footprint per Pound,Total Carbon Footprint for that Material Part\n"+
       "List the Data Source URL links (Amazon, ect.)")
-
+   
       category_prompt = st.text_area("Category 👇", key="3", value = "Follow the below steps:\n"+
       "Create an Excel style table of product categories based on the Amazon listing,  using the following formatting as a guide: \n"+
       "Department, Category, Subcategory, Specific Category. \n"+ 
