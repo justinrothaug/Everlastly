@@ -62,11 +62,14 @@ with st.sidebar:
       "3) For each material, find both the source country and manufacturing country.\n"+
       "4) Find the *estimated % of the total volume for each material. \n"+
       "5) Find the density for each material in lb/ft^3. List the source for this data\n"+
-      "6) Calculate the weight of each material using the volume and density.  This should equal the total weight of the product found in step 1\n"+                                     
+      "6) Calculate the weight of each material using the following steps:\n"+
+      "6a) find the Volume-Density by multiplying each material’s volume percentage by that material’s density\n"+
+      "6b) Calculate the Density-Ratio by dividing that material’s Volume-Density by the total for all Volume-Densities of all materials found in the product\n"+
+      "6c) Multiply the Density Ratio by the total weight of the product. This should equal the total weight of the product found in Step 1.\n"+                         
       "7) Calculate the Co2 carbon footprint for each Material (Co2 per Pound).\n"+ 
       "8) Multiply the percentage of each material by its respective carbon footprint per pound and then sum these values to estimate the Total Co2 for the Product.\n"+
       "Only output in Table format like this:\n"+ 
-      "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Estimated % in Weight,Material Density,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2\n"+
+      "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Material Density, Volume Density, Density Ratio,Weight in Pounds,CO2 Carbon Footprint per Pound,Total CO2\n"+
       "List the Data Source URL links (Amazon, ect.)")
 
       category_prompt = st.text_area("Category 👇", key="3", value = "Follow the below steps:\n"+
