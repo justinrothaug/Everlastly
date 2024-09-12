@@ -95,7 +95,7 @@ product_prompt2 = ("Follow the below steps:\n"+
 
    
 
-st.warning(text_input)
+#st.warning(text_input)
 
 def eval_output(message):
      productcard="For the following product:"+text_input+product_prompt
