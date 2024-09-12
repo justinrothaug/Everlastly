@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import streamlit as st
-
+import random
 # Importing Perplexity
 from langchain_community.chat_models import ChatPerplexity
 from langchain_core.prompts import ChatPromptTemplate
