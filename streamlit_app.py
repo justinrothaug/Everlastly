@@ -111,6 +111,9 @@ def eval_output(message):
          return aitopics
      aitopics = get_chatassistant_aitopics()
      response1 = aitopics.run(productcard)
+     text = str(response['answer'])
+     return text
+
 
 def production_output(message):
      productcard="For the following product:"+message+product_prompt2
@@ -126,6 +129,8 @@ def production_output(message):
          return aitopics
      aitopics = get_chatassistant_aitopics()
      response2 = aitopics.run(productcard)
+     text = str(response['answer'])
+     return text
    
 #STREAMLIT APP
 #st.title("💬 RealAvatar Arena")
