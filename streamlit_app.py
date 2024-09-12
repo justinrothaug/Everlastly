@@ -58,7 +58,7 @@ with st.sidebar:
       #st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
 
 
-product_prompt = "Follow the below steps:\n"+
+product_prompt = ("Follow the below steps:\n"+
 "*Prioritize sources like Amazon and the Company website*\n"+
 "1) Identify the Total Weight of the product.\n"+
 "2) Find every material used in creating the product. Do not skip any materials.Materials combined must equal 100%.\n"+
@@ -73,9 +73,9 @@ product_prompt = "Follow the below steps:\n"+
 "8) Multiply the Part Weight of each material by its respective Published Carbon Footprint per pound to get the Carbon Footprint for that Material Part. Then sum these values to estimate the Total Co2 for the Product.\n"+
 "Only output in Table format like this:\n"+ 
 "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Material Density, Volume Density, Density Ratio,Weight in Pounds,Published CO2 Carbon Footprint per Pound,Total Carbon Footprint for that Material Part\n"+
-"List the Data Source URL links (Amazon, ect.)"
+"List the Data Source URL links (Amazon, ect.)")
 
-product_prompt2 = "Follow the below steps:\n"+
+product_prompt2 = ("Follow the below steps:\n"+
 "*Prioritize sources like Amazon and the Company website*\n"+
 "1) Identify the Total Weight of the product.\n"+
 "2) Find every material used in creating the product. Do not skip any materials.Materials combined must equal 100%.\n"+
@@ -90,7 +90,7 @@ product_prompt2 = "Follow the below steps:\n"+
 "8) Multiply the Part Weight of each material by its respective Published Carbon Footprint per pound to get the Carbon Footprint for that Material Part. Then sum these values to estimate the Total Co2 for the Product.\n"+
 "Only output in Table format like this:\n"+ 
 "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Material Density, Volume Density, Density Ratio,Weight in Pounds,Published CO2 Carbon Footprint per Pound,Total Carbon Footprint for that Material Part\n"+
-"List the Data Source URL links (Amazon, ect.)"
+"List the Data Source URL links (Amazon, ect.)")
 
 
    
