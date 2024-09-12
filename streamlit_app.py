@@ -53,9 +53,7 @@ st.markdown(
 )
 
 
-with st.sidebar: 
-      message = st.text_input("Enter Everlastly Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
-      st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
+
 
 
 product_prompt = ("Follow the below steps:\n"+
@@ -143,4 +141,6 @@ def ProductBOM(message):
       st.success(response2)
 
 
-
+with st.sidebar: 
+      message = st.text_input("Enter Everlastly Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
+      st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
