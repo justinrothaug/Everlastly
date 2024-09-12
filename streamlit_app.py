@@ -98,7 +98,7 @@ product_prompt2 = ("Follow the below steps:\n"+
 #st.warning(text_input)
 
 def eval_output(message):
-     productcard="For the following product:"+text_input+product_prompt
+     productcard="For the following product:"+message+product_prompt
      template = """You are a helpful assistant in following instructions for {text}. 
      Provide a one sentence explanation """
      system_message_prompt = SystemMessagePromptTemplate.from_template(template)
@@ -113,7 +113,7 @@ def eval_output(message):
      responsememories = aitopics.run(productcard)
 
 def production_output(message):
-     productcard="For the following product:"+text_input+product_prompt2
+     productcard="For the following product:"+message+product_prompt2
      template = """You are a helpful assistant in following instructions for {text}. 
      Provide a one sentence explanation """
      system_message_prompt = SystemMessagePromptTemplate.from_template(template)
