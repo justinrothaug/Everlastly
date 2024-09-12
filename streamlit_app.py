@@ -137,10 +137,10 @@ if message:
    response2 = production_output(message)
    
    
-   col1, col2 = st.columns(2)
-   with col1:
+   ##col1, col2 = st.columns(2)
+   #with col1:
       st.success(response1)
-   with col2:
+   #with col2:
       st.success(response2)
 
 
