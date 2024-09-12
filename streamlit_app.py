@@ -73,7 +73,7 @@ product_prompt = "Follow the below steps:\n"+
 "8) Multiply the Part Weight of each material by its respective Published Carbon Footprint per pound to get the Carbon Footprint for that Material Part. Then sum these values to estimate the Total Co2 for the Product.\n"+
 "Only output in Table format like this:\n"+ 
 "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Material Density, Volume Density, Density Ratio,Weight in Pounds,Published CO2 Carbon Footprint per Pound,Total Carbon Footprint for that Material Part\n"+
-"List the Data Source URL links (Amazon, ect.)")
+"List the Data Source URL links (Amazon, ect.)"
 
 product_prompt2 = "Follow the below steps:\n"+
 "*Prioritize sources like Amazon and the Company website*\n"+
@@ -90,7 +90,7 @@ product_prompt2 = "Follow the below steps:\n"+
 "8) Multiply the Part Weight of each material by its respective Published Carbon Footprint per pound to get the Carbon Footprint for that Material Part. Then sum these values to estimate the Total Co2 for the Product.\n"+
 "Only output in Table format like this:\n"+ 
 "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Material Density, Volume Density, Density Ratio,Weight in Pounds,Published CO2 Carbon Footprint per Pound,Total Carbon Footprint for that Material Part\n"+
-"List the Data Source URL links (Amazon, ect.)")
+"List the Data Source URL links (Amazon, ect.)"
 
 
    
