@@ -110,7 +110,7 @@ def eval_output(message):
              llm=ChatPerplexity(model="llama-3.1-sonar-small-128k-online", temperature=0),prompt=chat_prompt,verbose=True)
          return aitopics
      aitopics = get_chatassistant_aitopics()
-     responsememories = aitopics.run(productcard)
+     response1 = aitopics.run(productcard)
 
 def production_output(message):
      productcard="For the following product:"+message+product_prompt2
@@ -125,7 +125,7 @@ def production_output(message):
              llm=ChatPerplexity(model="llama-3.1-sonar-small-128k-online", temperature=0),prompt=chat_prompt,verbose=True)
          return aitopics
      aitopics = get_chatassistant_aitopics()
-     responsememories = aitopics.run(productcard)
+     response2 = aitopics.run(productcard)
    
 #STREAMLIT APP
 #st.title("💬 RealAvatar Arena")
