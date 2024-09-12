@@ -11,16 +11,16 @@ from langchain.chains import     ConversationalRetrievalChain
 from langchain.prompts.chat import (ChatPromptTemplate,SystemMessagePromptTemplate,HumanMessagePromptTemplate,)
 from langchain.chains import LLMChain, ConversationChain
 
-st.set_page_config(page_title="Evergrade.AI", layout="wide")
+st.set_page_config(page_title="Evergrade.Arena", layout="wide")
 
 #Add Keys
 PPLX_API_KEY= os.environ['PPLX_API_KEY']
 PPLX_API_KEY2 = "Bearer "+PPLX_API_KEY
 
 header = st.container()
-header.title("Evergrade.AI")
-with st.sidebar: 
-   st.title("Evergrade.AI")  
+header.title("Evergrade.Arena")
+#with st.sidebar: 
+   #st.title("Evergrade.AI")  
 #################################################################################################################################################
 ### Custom CSS for the sticky header#########
 header.write("""<div class='fixed-header'/>""", unsafe_allow_html=True)
@@ -92,8 +92,8 @@ product_prompt2 = ("Follow the below steps:\n"+
 
 
    
-with st.sidebar: 
-      message = st.text_input("Enter Everlastly Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
+#with st.sidebar: 
+      message = st.text_input("Enter Evergrade Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
       #st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
 
 #st.warning(text_input)
