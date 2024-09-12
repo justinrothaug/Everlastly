@@ -92,6 +92,9 @@ product_prompt2 = ("Follow the below steps:\n"+
 
 
    
+with st.sidebar: 
+      message = st.text_input("Enter Everlastly Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
+      #st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
 
 #st.warning(text_input)
 
@@ -129,7 +132,7 @@ def production_output(message):
      return response2
    
 
-def ProductBOM(message):
+if message:
    response1 = eval_output(message)
    response2 = production_output(message)
    
@@ -141,6 +144,4 @@ def ProductBOM(message):
       st.success(response2)
 
 
-with st.sidebar: 
-      message = st.text_input("Enter Everlastly Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
-      st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
+
