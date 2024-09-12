@@ -128,7 +128,6 @@ def production_output(message):
          return aitopics
      aitopics = get_chatassistant_aitopics()
      response2 = aitopics.run(productcard)
-     #text = str(response['answer'])
      return response2
    
 #STREAMLIT APP
