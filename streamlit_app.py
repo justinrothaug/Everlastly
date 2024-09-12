@@ -55,7 +55,7 @@ st.markdown(
 
 with st.sidebar: 
       message = st.text_input("Enter Everlastly Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
-      #st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
+      st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
 
 
 product_prompt = ("Follow the below steps:\n"+
@@ -130,34 +130,17 @@ def production_output(message):
      response2 = aitopics.run(productcard)
      return response2
    
-#STREAMLIT APP
-#st.title("💬 RealAvatar Arena")
-#message = st.text_input("Let's see which AI is better. Write something:")
-if message:
-    first_one = random.choice([1,2,3,4,5,6])
-    if first_one>3:
-        response1 = eval_output(message)
-        response2 = production_output(message)
-    else:
-        response1 = production_output(message)
-        response2 = eval_output(message)
+
+def ProductBOM(message):
+     response1 = eval_output(message)
+     response2 = production_output(message)
+
 
     col1, col2 = st.columns(2)
     with col1:
         st.success(response1)
-        if st.button("Select Bot 1 Response", key='select1'):
-            st.session_state.selected = "Bot 1"
     with col2:
         st.success(response2)
-        if st.button("Select Bot 2 Response", key='select2'):
-            st.session_state.selected = "Bot 2"
 
-    if 'selected' in st.session_state:
-        if first_one>3:
-            st.success(f"You selected Llama 3.1 70B")
-        else:
-            st.success(f"You selected Claude 3.5 Sonnet")
-           
-  #st.warning("Product BOM:  \n"+responsememories)
 
 
