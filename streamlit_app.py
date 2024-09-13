@@ -82,7 +82,7 @@ product_prompt = ("Follow the below steps:\n"+
 "9) Calculate the Material Part Transportation Carbon Footprint using the following steps:\n"+
 "9a) Calculate the Material Journey Distance for each Material via Ocean Cargo Ship assuming each Material travels from the Material Source Country to the Product Country Of Origin to the nearest Port Of Call in the United States.\n"+
 "9b) Next calculate the Material Part Transportation Carbon Footprint by multiplying the Material Part Metric Weight by the Material Journey Distance by a factor of 0.0001.\n"+
-"Create an Excel style table where each Material identified has its own row and the columns are as follows:\n"+ 
+"Create an Excel style table with rows, columns and cells where each Material identified has its own row and the columns are as follows:\n"+ 
 "UPC Code,Product Name, Weight, Country Of Origin, Material, Material Source Country, Material Volume Percentage, Material Density, Material Volume-Density, Material Density-Ratio, Material Part Weight (Lbs), Material Part Metric Weight (Kg), Published Carbon Footprint (per Kg), Material Part Carbon Footprint, Material Journey Distance, Material Part Transportation Carbon Footprint.\n"+
 "List all the Data Source URL links (Amazon, etc.). Output the table in a format that can be easily copied and pasted into a spreadsheet application while maintaining its structure and formatting.")
 
