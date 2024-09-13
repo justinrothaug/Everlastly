@@ -65,7 +65,7 @@ with st.sidebar:
 
 
 
-product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the below steps:\n"+
+product_prompt = ("Follow the below steps:\n"+
 "*Prioritize sources like Amazon and the Company website.* If the source is Amazon, prioritize sections like 'Product Information', 'Product Overview' and 'From the 'Manufacturer' for any details.\n"+
 "1) Find the Product Weight of the product in pounds using several sources (including amazon.com where it can be found under 'item weight') to double check it's correct.\n"+
 "2) Identify the Product Country Of Origin of the product defined as the country where the product was manufactured.\n"+
