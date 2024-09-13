@@ -143,10 +143,7 @@ def production_output(message):
      return response2
 
 def photo(photo):
-   #import base64
-   #import httpx
    model = ChatOpenAI(model="gpt-4o")
-   #image_data = base64.b64encode(httpx.get(photo).content).decode("utf-8")
    message = HumanMessage(
        content=[
            {"type": "text", "text": "describe the weather in this image"},
