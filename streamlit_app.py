@@ -130,13 +130,14 @@ def production_output(message):
      response2 = aitopics.run(productcard)
      return response2
    
-
-with st.sidebar:
-   st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
-   
 def ProductBOM(message):
    response1 = eval_output(message)
    response2 = production_output(message)
+   
+with st.sidebar:
+   st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
+   
+
    
    
    ##col1, col2 = st.columns(2)
