@@ -52,7 +52,11 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
+with st.sidebar: 
+      message = st.text_input("Enter Evergrade Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
+      eval = st.toggle("Evaluation Mode", value=True)
+      tentimes = st.toggle("Run 10 Times", value=False)
+      showwork = st.toggle("Show Work", value=True)
 
 
 
@@ -95,11 +99,7 @@ if showwork:
 else:
    output = "DO NOT DISPLAY THE WORK ABOVE. ONLY DISPLAY THE TABLE"
    
-with st.sidebar: 
-      message = st.text_input("Enter Evergrade Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
-      eval = st.toggle("Evaluation Mode", value=True)
-      tentimes = st.toggle("Run 10 Times", value=False)
-      showwork = st.toggle("Show Work", value=True)
+
 
 
 #st.warning(text_input)
