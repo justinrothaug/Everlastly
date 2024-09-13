@@ -54,6 +54,7 @@ st.markdown(
 
 with st.sidebar: 
       message = st.text_input("Enter Evergrade Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
+      photo = st.text_input("Enter Photo URL 👇", key="5", value = "https://m.media-amazon.com/images/I/71MORKIBwoL._AC_UF894,1000_QL80_.jpg")
       eval = st.toggle("Evaluation Mode", value=True)
       tentimes = st.toggle("Run 10 Times", value=False)
       showwork = st.toggle("Show Work", value=True)
@@ -136,6 +137,22 @@ def production_output(message):
      aitopics = get_chatassistant_aitopics()
      response2 = aitopics.run(productcard)
      return response2
+
+def photo(photo):
+     productcard="For the following photo URL, analyze the photo and list the estimated % of each material in the product: "+message
+     template = """You are a helpful assistant in following instructions for {text}. 
+     Provide a one sentence explanation """
+     system_message_prompt = SystemMessagePromptTemplate.from_template(template)
+     human_template = "{text}"
+     human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
+     chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
+     def get_chatassistant_aitopics():
+         aitopics = LLMChain(
+             llm=ChatPerplexity(model="llama-3.1-sonar-large-128k-online", temperature=0, top_p=.5),prompt=chat_prompt,verbose=True)
+         return aitopics
+     aitopics = get_chatassistant_aitopics()
+     response2 = aitopics.run(productcard)
+     return response2
    
 if message:
    if eval:
@@ -165,7 +182,9 @@ if message:
       st.success(response9) 
       st.success(response10) 
 
-
+if photo:
+   response11 = photo(photo)
+   st.success(response11)
 
 #with st.sidebar:
 #   st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
