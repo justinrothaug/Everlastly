@@ -84,7 +84,7 @@ with st.sidebar:
    "9b) Next calculate the Material Part Transportation Carbon Footprint by multiplying the Material Part Metric Weight by the Material Journey Distance by a factor of 0.0001.\n"+
    "Create an Excel style table where each Material identified has its own row and the columns are as follows:\n"+ 
    "UPC Code,Product Name, Weight, Country Of Origin, Material, Material Source Country, Material Volume Percentage, Material Density, Material Volume-Density, Material Density-Ratio, Material Part Weight (Lbs), Material Part Metric Weight (Kg), Published Carbon Footprint (per Kg), Material Part Carbon Footprint, Material Journey Distance, Material Part Transportation Carbon Footprint.\n"+
-   "List all the Data Source URL links (Amazon, etc.)")
+   "List all the Data Source URL links (Amazon, etc.). Output the table in a format that can be easily copied and pasted into a spreadsheet application while maintaining its structure and formatting.")
 
 product_prompt2 = ("Follow the below steps:\n"+
 "*Prioritize sources like Amazon and the Company website*\n"+
