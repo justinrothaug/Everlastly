@@ -133,6 +133,11 @@ def production_output(message):
 def ProductBOM(message):
    response1 = eval_output(message)
    response2 = production_output(message)
+   ##col1, col2 = st.columns(2)
+   #with col1:
+   st.success(response1)
+   #with col2:
+   st.success(response2)
    
 with st.sidebar:
    st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
@@ -140,11 +145,7 @@ with st.sidebar:
 
    
    
-   ##col1, col2 = st.columns(2)
-   #with col1:
-   st.success(response1)
-   #with col2:
-   st.success(response2)
+
 
 
 
