@@ -97,7 +97,7 @@ product_prompt2 = ("Follow the below steps:\n"+
 if showwork:
    output = ""
 else:
-   output = "DO NOT DISPLAY THE WORK ABOVE. ONLY DISPLAY THE TABLE"
+   output = "DO NOT DISPLAY STEPS 1-8 IN THE OUTPUT. ONLY DISPLAY THE TABLE"
    
 
 
