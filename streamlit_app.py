@@ -10,6 +10,8 @@ from langchain.chains import ConversationChain
 from langchain.chains import     ConversationalRetrievalChain
 from langchain.prompts.chat import (ChatPromptTemplate,SystemMessagePromptTemplate,HumanMessagePromptTemplate,)
 from langchain.chains import LLMChain, ConversationChain
+from langchain_core.messages import HumanMessage
+from langchain_openai import ChatOpenAI
 
 st.set_page_config(page_title="Evergrade.Arena", layout="wide")
 
@@ -139,20 +141,21 @@ def production_output(message):
      return response2
 
 def photo(photo):
-     productcard="For the following photo URL, analyze the photo and list the estimated % of each material in the product: "+message
-     template = """You are a helpful assistant in following instructions for {text}. 
-     Provide a one sentence explanation """
-     system_message_prompt = SystemMessagePromptTemplate.from_template(template)
-     human_template = "{text}"
-     human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
-     chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
-     def get_chatassistant_aitopics():
-         aitopics = LLMChain(
-             llm=ChatPerplexity(model="llama-3.1-70b-instruct", temperature=0, top_p=.5),prompt=chat_prompt,verbose=True)
-         return aitopics
-     aitopics = get_chatassistant_aitopics()
-     response2 = aitopics.run(productcard)
-     return response2
+   import base64
+   import httpx
+   model = ChatOpenAI(model="gpt-4o")
+   image_data = base64.b64encode(httpx.get(photo).content).decode("utf-8")
+   message = HumanMessage(
+       content=[
+           {"type": "text", "text": "describe the materials in this image"},
+           {
+               "type": "image_url",
+               "image_url": {"url": f"data:image/jpeg;base64,{image_data}"},
+           },
+       ],
+   )
+   response = model.invoke([message])
+   return(response.content)
    
 if message:
    if eval:
