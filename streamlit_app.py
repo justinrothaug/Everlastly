@@ -90,12 +90,16 @@ product_prompt2 = ("Follow the below steps:\n"+
 "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Material Density, Volume Density, Density Ratio,Weight in Pounds,Published CO2 Carbon Footprint per Pound,Total Carbon Footprint for that Material Part\n"+
 "List the Data Source URL links (Amazon, ect.)")
 
-output = "DO NOT DISPLAY THE WORK ABOVE. ONLY DISPLAY THE TABLE"
+if showwork:
+   output = ""
+else:
+   output = "DO NOT DISPLAY THE WORK ABOVE. ONLY DISPLAY THE TABLE"
    
 with st.sidebar: 
       message = st.text_input("Enter Evergrade Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
       eval = st.toggle("Evaluation Mode", value=True)
       tentimes = st.toggle("Run 10 Times", value=False)
+      showwork = st.toggle("Show Work", value=True)
 
 
 #st.warning(text_input)
@@ -136,20 +140,20 @@ def production_output(message):
 if message:
    if eval:
       response1 = eval_output(message+output)
-      response2 = production_output(message)
+      response2 = production_output(message+output)
       st.success(response1)
       st.success(response2)
    if tentimes:
-      response1 = eval_output(message)
-      response2 = eval_output(message)
-      response3 = eval_output(message)
-      response4 = eval_output(message)
-      response5 = eval_output(message)
-      response6 = eval_output(message)
-      response7 = eval_output(message)
-      response8 = eval_output(message)
-      response9 = eval_output(message)
-      response10 = eval_output(message)
+      response1 = eval_output(message+output)
+      response2 = eval_output(message+output)
+      response3 = eval_output(message+output)
+      response4 = eval_output(message+output)
+      response5 = eval_output(message+output)
+      response6 = eval_output(message+output)
+      response7 = eval_output(message+output)
+      response8 = eval_output(message+output)
+      response9 = eval_output(message+output)
+      response10 = eval_output(message+output)
       st.success(response1)
       st.success(response2)
       st.success(response3) 
