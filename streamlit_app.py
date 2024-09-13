@@ -92,9 +92,8 @@ product_prompt2 = ("Follow the below steps:\n"+
 
 
    
-#with st.sidebar: 
-message = st.text_input("Enter Evergrade Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
-      #st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
+with st.sidebar: 
+      message = st.text_input("Enter Evergrade Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
 
 #st.warning(text_input)
 
@@ -132,7 +131,10 @@ def production_output(message):
      return response2
    
 
-if message:
+with st.sidebar:
+   st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
+   
+def ProductBOM():
    response1 = eval_output(message)
    response2 = production_output(message)
    
