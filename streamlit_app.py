@@ -58,7 +58,6 @@ st.markdown(
 
 with st.sidebar: 
       message = st.text_input("Enter Evergrade Product 👇", key="4", value = "Viking Culinary Contemporary 3-Ply Stainless Steel Dutch Oven with Lid")
-      photo = st.text_input("Enter Photo URL 👇", key="5", value = "https://m.media-amazon.com/images/I/71MORKIBwoL._AC_UF894,1000_QL80_.jpg")
       eval = st.toggle("Evaluation Mode", value=True)
       tentimes = st.toggle("Run 10 Times", value=False)
       showwork = st.toggle("Show Work", value=True)
@@ -146,28 +145,6 @@ def production_output(message):
      response2 = aitopics.run(productcard)
      return response2
 
-def photo(photo):
-   response = client.chat.completions.create(
-       model=ChatOpenAI(model="gpt-4o"),
-       messages=[
-           {
-               "role": "user",
-               "content": [
-                   {"type": "text", "text": "What’s in this image?"},
-                   {
-                       "type": "image_url",
-                       "image_url": {
-                           "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg",
-                           "detail": "high"
-                       },
-                   },
-               ],
-           }
-       ],
-       max_tokens=300,
-   )
-   print(response.choices[0].message.content)
-   return response.choices[0].message.content
 
 
 
@@ -198,14 +175,6 @@ if message:
       st.success(response8) 
       st.success(response9) 
       st.success(response10) 
-
-if photo:
-   response11 = photo(photo)
-   st.success(response11)
-
-#with st.sidebar:
-#   st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
-   
 
    
    
