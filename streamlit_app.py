@@ -18,6 +18,9 @@ st.set_page_config(page_title="Evergrade.Arena", layout="wide")
 #Add Keys
 PPLX_API_KEY= os.environ['PPLX_API_KEY']
 PPLX_API_KEY2 = "Bearer "+PPLX_API_KEY
+OPENAI_API_KEY= os.environ["OPENAI_API_KEY"]
+client= OpenAI(api_key= os.environ["OPENAI_API_KEY"])
+chat= ChatOpenAI(openai_api_key= os.environ["OPENAI_API_KEY"])
 
 header = st.container()
 header.title("Evergrade.Arena")
