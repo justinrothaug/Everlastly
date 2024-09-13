@@ -143,16 +143,30 @@ def production_output(message):
      return response2
 
 def photo(photo):
-   model = ChatOpenAI(model="gpt-4o")
-   message = HumanMessage(
-       content=[
-           {"type": "text", "text": "describe the weather in this image"},
-           {"type": "image_url", "image_url": {"url": photo}},
+   response = client.chat.completions.create(
+       model=ChatOpenAI(model="gpt-4o"),
+       messages=[
+           {
+               "role": "user",
+               "content": [
+                   {"type": "text", "text": "What’s in this image?"},
+                   {
+                       "type": "image_url",
+                       "image_url": {
+                           "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg",
+                           "detail": "high"
+                       },
+                   },
+               ],
+           }
        ],
+       max_tokens=300,
    )
-   response = model.invoke([message])
-   return(response.content)
-   
+   print(response.choices[0].message.content)
+   return response.choices[0].message.content
+
+
+
 if message:
    if eval:
       response1 = eval_output(message+output)
