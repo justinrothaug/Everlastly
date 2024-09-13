@@ -114,7 +114,7 @@ def eval_output(message):
      chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
      def get_chatassistant_aitopics():
          aitopics = LLMChain(
-             llm=ChatPerplexity(model="llama-3.1-sonar-small-128k-online", temperature=0),prompt=chat_prompt,verbose=True)
+             llm=ChatPerplexity(model="llama-3.1-sonar-large-128k-online", temperature=0, top_p=.5),prompt=chat_prompt,verbose=True)
          return aitopics
      aitopics = get_chatassistant_aitopics()
      response1 = aitopics.run(productcard)
@@ -131,7 +131,7 @@ def production_output(message):
      chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
      def get_chatassistant_aitopics():
          aitopics = LLMChain(
-             llm=ChatPerplexity(model="llama-3.1-sonar-large-128k-online", temperature=0),prompt=chat_prompt,verbose=True)
+             llm=ChatPerplexity(model="llama-3.1-sonar-large-128k-online", temperature=0, top_p=.5),prompt=chat_prompt,verbose=True)
          return aitopics
      aitopics = get_chatassistant_aitopics()
      response2 = aitopics.run(productcard)
