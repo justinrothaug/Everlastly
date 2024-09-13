@@ -134,7 +134,7 @@ def production_output(message):
 with st.sidebar:
    st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
    
-def ProductBOM():
+def ProductBOM(message):
    response1 = eval_output(message)
    response2 = production_output(message)
    
