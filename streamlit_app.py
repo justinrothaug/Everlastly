@@ -94,6 +94,9 @@ product_prompt2 = ("Follow the below steps:\n"+
    
 with st.sidebar: 
       message = st.text_input("Enter Evergrade Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
+      eval = st.toggle("Evaluation Mode", value=True)
+      tentimes = st.toggle("Run 10 Times", value=False)
+
 
 #st.warning(text_input)
 
@@ -111,7 +114,7 @@ def eval_output(message):
          return aitopics
      aitopics = get_chatassistant_aitopics()
      response1 = aitopics.run(productcard)
-     #return response1
+     return response1
 
 
 def production_output(message):
@@ -128,19 +131,40 @@ def production_output(message):
          return aitopics
      aitopics = get_chatassistant_aitopics()
      response2 = aitopics.run(productcard)
-     #return response2
+     return response2
    
-def ProductBOM(message):
-   response1 = eval_output(message)
-   response2 = production_output(message)
-   ##col1, col2 = st.columns(2)
-   #with col1:
-   st.success(response1)
-   #with col2:
-   st.success(response2)
-   
-with st.sidebar:
-   st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
+if message:
+   if eval:
+      response1 = eval_output(message)
+      response2 = production_output(message)
+      st.success(response1)
+      st.success(response2)
+   if tentimes:
+      response1 = eval_output(message)
+      response2 = eval_output(message)
+      response3 = eval_output(message)
+      response4 = eval_output(message)
+      response5 = eval_output(message)
+      response6 = eval_output(message)
+      response7 = eval_output(message)
+      response8 = eval_output(message)
+      response9 = eval_output(message)
+      response10 = eval_output(message)
+      st.success(response1)
+      st.success(response2)
+      st.success(response3) 
+      st.success(response4) 
+      st.success(response5) 
+      st.success(response6) 
+      st.success(response7) 
+      st.success(response8) 
+      st.success(response9) 
+      st.success(response10) 
+
+
+
+#with st.sidebar:
+#   st.button('Run🍃', on_click=ProductBOM, key = "121", use_container_width=True)
    
 
    
