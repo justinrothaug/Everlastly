@@ -111,7 +111,7 @@ def eval_output(message):
          return aitopics
      aitopics = get_chatassistant_aitopics()
      response1 = aitopics.run(productcard)
-     return response1
+     #return response1
 
 
 def production_output(message):
@@ -128,7 +128,7 @@ def production_output(message):
          return aitopics
      aitopics = get_chatassistant_aitopics()
      response2 = aitopics.run(productcard)
-     return response2
+     #return response2
    
 def ProductBOM(message):
    response1 = eval_output(message)
