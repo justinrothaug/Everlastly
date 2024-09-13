@@ -57,7 +57,7 @@ st.markdown(
 )
 
 with st.sidebar: 
-      message = st.text_input("Enter Evergrade Product 👇", key="4", value = "ZWILLING Twin Kitchen Shears, 8 Inch")
+      message = st.text_input("Enter Evergrade Product 👇", key="4", value = "Viking Culinary Contemporary 3-Ply Stainless Steel Dutch Oven with Lid")
       photo = st.text_input("Enter Photo URL 👇", key="5", value = "https://m.media-amazon.com/images/I/71MORKIBwoL._AC_UF894,1000_QL80_.jpg")
       eval = st.toggle("Evaluation Mode", value=True)
       tentimes = st.toggle("Run 10 Times", value=False)
@@ -65,22 +65,26 @@ with st.sidebar:
 
 
 
-product_prompt = ("Follow the below steps:\n"+
-   "*Prioritize sources like Amazon and the Company website.* If the source is Amazon, prioritize sections like 'Product Information', 'Product Overview' and 'From the manufacturer' for any details.\n"+
-   "1) Find the Total Weight of the product in pounds using several sources (including amazon.com where it can be found under 'item weight') to make sure it's correct.\n"+
-   "2) Identify all Materials used in creating the product and also estimate the percentage of total volume of each Material for that product (called Material Percentage). Analyze closely all product images and accompanying product texts to determine Materials and Material Percentage. Do not skip any materials. Material Percentage percentages combined must equal 100%.\n"+
-   "3) For each Material, identify the Material Source Country defined as the most likely single country where the material is first sourced and processed based on research that shows where most of that Material is being sourced for manufacturing.\n"+
-   "4) Next find the Country of Origin defined as the country where the product was manufactured.\n"+
-   "5) Find the published Density for each Material in lb/ft^3 (called Material Density). List the source for this data\n"+
-   "6) Calculate the Part Weight of each Material using the following steps:\n"+
-   "6a) find the Volume-Density by multiplying each Material’s Material Percentage by that Material’s Material Density\n"+
-   "6b) Calculate the Density-Ratio by dividing that Material’s Volume-Density by the total for all Volume-Densities of all Materials found in the product\n"+
-   "6c) Calculate the Part Weight by multiplying the Density-Ratio by the Total Weight of the product. The sum of all Part Weights should equal the Total Weight of the product found in Step 1.\n"+                         
-   "7) Find the generally accepted carbon footprint for each Material (called the Published Material Carbon Footprint), expressed as both Kg Co2/Pound and Kg Co2/kg\n"+
-   "8) Multiply the Part Weight of each material by its respective Published Material Carbon Footprint per pound to get the Material/Product Total Co2. Then sum all Material/Product Total Co2 values to get the Product Co2 Total for the product.\n"+
-   "Only output in Table format like this:\n"+ 
-   "UPC Code,Product Name, Material,Material Source Country, Country of Origin, Material Percentage, Material Density, Volume-Density, Density-Ratio,Part Weight in Pounds,Published Carbon Footprint per Pound, Published Carbon Footprint per Kg, Material/Product Total Co2, Product Co2 Total.\n"+
-   "List the Data Source URL links (Amazon, ect.)")
+   product_prompt = st.text_area("Product & BOM 👇", key="5", value = "Follow the below steps:\n"+
+   "*Prioritize sources like Amazon and the Company website.* If the source is Amazon, prioritize sections like 'Product Information', 'Product Overview' and 'From the 'Manufacturer' for any details.\n"+
+   "1) Find the Product Weight of the product in pounds using several sources (including amazon.com where it can be found under 'item weight') to double check it's correct.\n"+
+   "2) Identify the Product Country Of Origin of the product defined as the country where the product was manufactured.\n"+
+   "3) Identify all individual Materials that are part of the product; do not skip any materials. Next, also estimate the percentage of total volume of each Material identified for that product (call that Material Volume Percentage); to get this estimate, analyze closely all product images and accompanying product descriptions and features to determine Materials and Material Percentage. Material Percentages combined must equal 100%.\n"+
+   "4) For each Material, identify the Material Source Country defined as the most likely single country where the material is first sourced and processed before it is shipped to manufacturing; base this information on research that shows where the majority of that Material is being sourced in the world.\n"+ 
+   "5) Find the published density for each Material stated in lb/ft^3 (call that Material Density). List the source for this data.\n"+
+   "6) Calculate the weight of each Material used in the product (called Material Part Weight) using the following steps:\n"+
+   "6a) Find the Material Volume-Density by multiplying each Material Volume Percentage by each corresponding Material Density\n"+
+   "6b) Calculate the Material Density-Ratio by dividing each Material Volume-Density by the total of all Material Volume-Densities for all Materials found in the product\n"+
+   "6c) Calculate the resulting Material Part Weight by multiplying each Material Density-Ratio by the full Weight of the product. The sum of all Material Part Weights should equal the Weight of the product found in Step 1.\n"+                         
+   "6d) Convert the Material Part Weight into the metric system by multiplying each Material Part Weight by 0.453592 to produce Material Part Metric Weight\n"+
+   "7) Find the generally accepted carbon footprint for each Material (called the Published Material Carbon Footprint) expressed as Kg Co2/Kilogram\n"+
+   "8) Multiply the Material Part Metric Weight of each Material by its respective Published Material Carbon Footprint to get the Material Part Carbon Footprint.\n"+
+   "9) Calculate the Material Part Transportation Carbon Footprint using the following steps:\n"+
+   "9a) Calculate the Material Journey Distance for each Material via Ocean Cargo Ship assuming each Material travels from the Material Source Country to the Product Country Of Origin to the nearest Port Of Call in the United States.\n"+
+   "9b) Next calculate the Material Part Transportation Carbon Footprint by multiplying the Material Part Metric Weight by the Material Journey Distance by a factor of 0.0001.\n"+
+   "Create an Excel style table where each Material identified has its own row and the columns are as follows:\n"+ 
+   "UPC Code,Product Name, Weight, Country Of Origin, Material, Material Source Country, Material Volume Percentage, Material Density, Material Volume-Density, Material Density-Ratio, Material Part Weight (Lbs), Material Part Metric Weight (Kg), Published Carbon Footprint (per Kg), Material Part Carbon Footprint, Material Journey Distance, Material Part Transportation Carbon Footprint.\n"+
+   "List all the Data Source URL links (Amazon, etc.)")
 
 product_prompt2 = ("Follow the below steps:\n"+
 "*Prioritize sources like Amazon and the Company website*\n"+
