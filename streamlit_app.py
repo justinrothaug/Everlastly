@@ -69,7 +69,7 @@ product_prompt = ("Follow the below steps:\n"+
    "6c) Calculate the Part Weight by multiplying the Density-Ratio by the Total Weight of the product. The sum of all Part Weights should equal the Total Weight of the product found in Step 1.\n"+                         
    "7) Find the generally accepted carbon footprint for each Material (called the Published Material Carbon Footprint), expressed as both Kg Co2/Pound and Kg Co2/kg\n"+
    "8) Multiply the Part Weight of each material by its respective Published Material Carbon Footprint per pound to get the Material/Product Total Co2. Then sum all Material/Product Total Co2 values to get the Product Co2 Total for the product.\n"+
-   "Only output in Table format like this where each Material/Product identified has it's own row:\n"+ 
+   "Hide all the above steps in the output. Only output in Table format like this:\n"+ 
    "UPC Code,Product Name, Material,Material Source Country, Country of Origin, Material Percentage, Material Density, Volume-Density, Density-Ratio,Part Weight in Pounds,Published Carbon Footprint per Pound, Published Carbon Footprint per Kg, Material/Product Total Co2, Product Co2 Total.\n"+
    "List the Data Source URL links (Amazon, ect.)")
 
@@ -86,7 +86,7 @@ product_prompt2 = ("Follow the below steps:\n"+
 "6c) Multiply the Density Ratio by the total weight of the product. This should equal the total weight of the product found in Step 1.\n"+                         
 "7) Find the Published Carbon Footprint for each Material, expressed as Co2 per Pound\n"+
 "8) Multiply the Part Weight of each material by its respective Published Carbon Footprint per pound to get the Carbon Footprint for that Material Part. Then sum these values to estimate the Total Co2 for the Product.\n"+
-"Only output in Table format like this:\n"+ 
+"Hide all the above steps in the output. Only output in Table format like this:\n"+ 
 "UPC Code,Product Name,Material,Source Country, Manufacturing Country,Estimated % in Volume,Material Density, Volume Density, Density Ratio,Weight in Pounds,Published CO2 Carbon Footprint per Pound,Total Carbon Footprint for that Material Part\n"+
 "List the Data Source URL links (Amazon, ect.)")
 
